@@ -16,6 +16,3 @@ class Deckofcards:
 
     def shuffle_deck(self):
         random.shuffle(self.cards)
-
-deck_1 = Deckofcards()
-print(deck_1.cards)
