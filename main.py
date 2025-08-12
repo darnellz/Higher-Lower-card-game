@@ -7,7 +7,6 @@ class Deckofcards:
     def __init__(self):
         self.cards = []
         self.create_deck()
-        self.shuffle_deck()
     
     def create_deck(self):
         for suit in Suits:
@@ -16,3 +15,8 @@ class Deckofcards:
 
     def shuffle_deck(self):
         random.shuffle(self.cards)
+    
+    def fist_card_pull(self):
+        if len(self.cards) < 2:
+            raise NameError("too few cards")
+        return self.cards.pop()
