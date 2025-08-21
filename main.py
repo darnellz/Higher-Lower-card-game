@@ -6,11 +6,14 @@ def main():
     HiLo_deck.create_deck()
 
     while True:
+        print(f"{len(HiLo_deck.deck)} card left")
         card1 = HiLo_deck.card_pull()
-        print(card1)
+        print(f"== {card1} ==")
         bet = Betting()
         card2 = HiLo_deck.card_pull()
         print(card2)
         WinLose(card1, card2, bet)
+        print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
 
-main()
+if __name__ == '__main__':
+    main()
