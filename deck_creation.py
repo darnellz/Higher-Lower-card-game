@@ -6,6 +6,7 @@ Ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", 
 class Deckofcards():
     def __init__(self):
         self.deck = []
+        self.create_deck()
 
     def create_deck(self):
         for suit in Suits:

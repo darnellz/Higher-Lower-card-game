@@ -1,18 +1,17 @@
 from deck_creation import Ranks
 
 def Betting():
-    print("Higher, Lower, Snap bet")
-    bet = input(":")
-    bet = bet.lower()
-    if bet == "higher":
-        print("==== higher ====")
-    elif bet == "lower":
-        print("==== lower ====")
-    elif bet == "snap":
-        print("==== snap bet ====")
-    else:
-        raise Exception("====input higher, lower, or snap====")
+    correct_input = False
+    print("higher, lower, snap bet")
+    while correct_input == False:
+        bet = input(": ")
+        bet = bet.lower()
+        if (bet != "higher") and (bet != "lower") and (bet != "snap"):
+            print("==== input higher, lower, or snap ====")
+        else:
+            correct_input = True
     return bet
+    
 
 def get_rank(card):
     card_pop = []

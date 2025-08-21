@@ -3,7 +3,6 @@ from betting import Betting, WinLose
 
 def main():
     HiLo_deck = Deckofcards()
-    HiLo_deck.create_deck()
 
     while True:
         print(f"{len(HiLo_deck.deck)} card left")
@@ -11,7 +10,7 @@ def main():
         print(f"== {card1} ==")
         bet = Betting()
         card2 = HiLo_deck.card_pull()
-        print(card2)
+        print(f"== {card2} ==")
         WinLose(card1, card2, bet)
         print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
 
