@@ -27,3 +27,9 @@ class Deckofcards():
         for x in range(3):
             self.card_pull()
         print("=-=-=-= 3 cards discarded =-=-=-=")
+
+    def card_rollover(self, card2):
+        if card2 != None:
+            card1 = card2
+            return card1
+        return self.card_pull()
