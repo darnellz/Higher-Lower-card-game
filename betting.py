@@ -36,10 +36,10 @@ def WinLose(card1, card2, bet):
     card2_index = Ranks.index(card2_rank)
     answer = bet_answer(card1_index, card2_index)
     if bet == answer:
-        print("============ WIN ============")
+        print("============================ WIN ============================")
         return True
     else:
-        print("============ LOSE ============")
+        print("============================ LOSE ===========================")
         return False
     
 def Wincounter(wincount, WL):
