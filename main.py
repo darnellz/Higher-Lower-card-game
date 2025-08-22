@@ -5,7 +5,6 @@ def main():
     HiLo_deck = Deckofcards()
     wincount = 0
     longwin = 0
-
     while True:
         print(f"        =-= Win streak: {wincount} =-=")
         print(f"=-= Longest win streak: {longwin} =-=")
