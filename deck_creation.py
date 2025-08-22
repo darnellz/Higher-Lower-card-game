@@ -20,10 +20,10 @@ class Deckofcards():
     def card_pull(self):
         if len(self.deck) == 0:
             self.create_deck()
-            print("- New deck created -")
+            print("--- New deck created ---")
         return self.deck.pop(0)
     
     def card_discard(self):
         for x in range(3):
-            self.deck.pop(0)
-        print("=-= 3 cards discarded =-=")
+            self.card_pull()
+        print("=-=-=-= 3 cards discarded =-=-=-=")
