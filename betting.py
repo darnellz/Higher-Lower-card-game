@@ -10,15 +10,12 @@ def Betting():
             print("==== input higher, lower, or snap ====")
         else:
             correct_input = True
-        if (bet == "higher") or (bet == "h"):
-            return "higher"
-        elif (bet == "lower") or (bet == "l"):
-            return "lower"
-        elif (bet == "snap") or (bet == "s"):
-            return "snap"
-        else:
-            raise Exception("What? (file 'betting', def 'betting')")
-    
+    if (bet == "higher") or (bet == "h"):
+        return "higher"
+    elif (bet == "lower") or (bet == "l"):
+        return "lower"
+    elif (bet == "snap") or (bet == "s"):
+        return "snap"
 
 def get_rank(card):
     card = card.split()
@@ -31,8 +28,6 @@ def bet_answer(card1, card2):
         return "higher"
     elif card1 > card2:
         return "lower"
-    else:
-        raise Exception("File 'betting', def 'bet_answer'")
 
 def WinLose(card1, card2, bet):
     card1_rank = get_rank(card1)
