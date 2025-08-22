@@ -21,9 +21,8 @@ def Betting():
     
 
 def get_rank(card):
-    card_pop = []
-    card_pop = card.split()
-    return card_pop.pop(0)
+    card = card.split()
+    return card.pop(0)
 
 def bet_answer(card1, card2):
     if card1 == card2:
