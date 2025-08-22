@@ -3,15 +3,18 @@ from betting import Betting, WinLose
 
 def main():
     HiLo_deck = Deckofcards()
+    wincount = 0
 
     while True:
-        print(f"{len(HiLo_deck.deck)} card left")
+        print(f"=-= Win streak: {wincount} =-=")
+        print(f"=-= {len(HiLo_deck.deck)} cards left =-=")
         card1 = HiLo_deck.card_pull()
-        print(f"== {card1} ==")
+        print(f"==== {card1} ====")
+        HiLo_deck.card_discard()
         bet = Betting()
         card2 = HiLo_deck.card_pull()
         print(f"== {card2} ==")
-        WinLose(card1, card2, bet)
+        wincount = WinLose(card1, card2, bet, wincount)
         print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@ def bet_answer(card1, card2):
     else:
         raise Exception("File 'betting', def 'bet_answer'")
 
-def WinLose(card1, card2, bet):
+def WinLose(card1, card2, bet, wincount):
     card1_rank = get_rank(card1)
     card2_rank = get_rank(card2)
     card1_index = Ranks.index(card1_rank)
@@ -36,5 +36,9 @@ def WinLose(card1, card2, bet):
     answer = bet_answer(card1_index, card2_index)
     if bet == answer:
         print("============ WIN ============")
+        wincount += 1
+        return wincount
     else:
         print("============ LOSE ============")
+        wincount = 0
+        return wincount
