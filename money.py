@@ -8,7 +8,7 @@ def Starting_cash():
                 raise Exception
             intmoney = True
         except:
-            print("Input a whole number greater than 1")
+            print("Input a whole number greater than 1.")
     return starting_cash
 
 def Bet_amount(money):
@@ -16,15 +16,15 @@ def Bet_amount(money):
     while betmoney == False:
         try:
             bet_amount = int(input("                                      =+= Bet amount: "))
-            if bet_amount > money:
+            if (bet_amount > money) or (bet_amount < 0):
                 raise Exception
             betmoney = True
         except:
-            print("Input a whole number less than or equal to your current money")
+            print("Input a positive whole number less than or equal to your current money.")
     return bet_amount
 
 def Bet_payout(money, bet_amount, WL):
     if WL == True:
-        return (bet_amount * 2) + money
+        return bet_amount + money
     else:
         return money - bet_amount

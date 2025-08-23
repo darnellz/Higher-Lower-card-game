@@ -1,6 +1,7 @@
 from deck_creation import Deckofcards
 from betting import Betting, WinLose, Wincounter, Longwincounter
 from money import Starting_cash, Bet_amount, Bet_payout
+from game_functions import End_game
 
 def main():
     HiLo_deck = Deckofcards()
@@ -8,7 +9,8 @@ def main():
     wincount = 0
     longwin = 0
     card2 = None
-    while True:
+    game_loop = True
+    while game_loop == True:
         print(f"=-=-=-=-=-= Win streak: {wincount} =-=")
         print(f"=-= Longest win streak: {longwin} =-=")
         print(f"                                      =+= Money: {money} =+=")
@@ -22,9 +24,14 @@ def main():
         print(f"                                      =+= {card2} =+=")
         WL = WinLose(card1, card2, bet)
         money = Bet_payout(money, bet_amount, WL)
+        end_game = End_game(money)
+        if end_game == True:
+            main()
+        elif end_game == False:
+            game_loop = False
         wincount = Wincounter(wincount, WL)
         longwin = Longwincounter(wincount, longwin)
-        print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
+        print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
 
 if __name__ == '__main__':
     main()
